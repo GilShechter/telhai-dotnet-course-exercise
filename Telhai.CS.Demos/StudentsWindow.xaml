@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Telhai.CS.Demos"
         mc:Ignorable="d"
-        Title="StudentsWindow" Height="450" Width="800">
+        Title="StudentsWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -35,7 +35,7 @@
             <Label Margin="10" Grid.Row="3" Name="lblAge" Content="Age:"/>
             <TextBox Margin="10" Name="txtAge" Grid.Row="3" Grid.Column="3"  />
 
-            <Button Name="btnSave" Grid.Row="4" Height="30" Grid.Column="1" Width="100" Content="Update" />
+            <Button Name="btnSave" Grid.Row="4" Height="30" Grid.Column="1" Width="100" Content="Update" Margin="130,0,130,0" VerticalAlignment="Top" Click="btnSave_Click" />
         </Grid>
 
 

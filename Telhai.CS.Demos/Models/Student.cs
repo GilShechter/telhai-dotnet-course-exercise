@@ -12,6 +12,10 @@ namespace Telhai.CS.Demos.Models
         public string Id { get; set; }
         public int Age { get; set; }
 
+        public override string ToString()
+        {
+            return this.Id + " " + this.Name;
+        }
         public Student():this("",-1)
         { 
         }

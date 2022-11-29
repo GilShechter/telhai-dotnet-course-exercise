@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Telhai.CS.Demos.Models;
 
 namespace Telhai.CS.Demos
 {
@@ -19,9 +20,28 @@ namespace Telhai.CS.Demos
     /// </summary>
     public partial class StudentsWindow : Window
     {
+        StudentsRepository repo;
         public StudentsWindow()
         {
             InitializeComponent();
+            repo = new StudentsRepository();
+        }
+
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Student s1 = new Student { Name = "Moshe", Age = 25 };
+            repo.AddStudent(s1);
+
+            Student s2 = new Student { Name = "David", Age = 25 };
+            repo.AddStudent(s2);
+
+            this.listBoxStudents.ItemsSource = repo.Students;
         }
     }
 }
