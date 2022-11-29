@@ -12,10 +12,15 @@ namespace Telhai.CS.Demos.Models
         public string Id { get; set; }
         public int Age { get; set; }
 
-        public Student()
-        {
-
+        public Student():this("",-1)
+        { 
         }
 
+        public Student(string name, int age)
+        {
+            this.Name = name;
+            this.Id = Guid.NewGuid().ToString();
+            this.Age = age;
+        }
     }
 }
