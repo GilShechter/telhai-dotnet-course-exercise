@@ -43,5 +43,23 @@ namespace Telhai.CS.Demos
 
             this.listBoxStudents.ItemsSource = repo.Students;
         }
+
+        private void listBoxStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.listBoxStudents.SelectedItem is Student s)
+            {
+                this.txtId.Text = s.Id;
+                this.txtName.Text = s.Name;
+                this.txtAge.Text = s.Age.ToString();
+            }
+        }
+
+        int iNoName = 1;
+        private void BtnAddStudent_Click(object sender, RoutedEventArgs e)
+        {
+            Student s = new Student { Name = "NoName_" + iNoName++ };
+            this.repo.AddStudent(s);
+            this.listBoxStudents.ItemsSource = this.repo.Students;
+        }
     }
 }
